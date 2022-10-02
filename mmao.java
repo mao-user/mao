@@ -1,30 +1,31 @@
 class mmao{
   public static void main(String[] args){
- int[][] grid =new int[][]{{3,0,8,4},{2,4,5,7},{9,2,6,3},{0,3,1,0}};
-int a=maxIncreaseKeepingSkyline(grid);
-System.out.println(""+a);
-}    static int maxIncreaseKeepingSkyline(int[][] grid) {
-      int[] row=new int[100];
-      int[] col=new int[100];
-      int sum=0;
-      for(int i=0;i<grid[0].length;i++){
-          for(int j=0;j<grid[0].length;j++){
-              int num=0;
-              num=grid[i][j];
-              row[i]=Math.max(row[i],num);
-              col[j]=Math.max(col[j],num);
-          }
+    int[] nums = new int[]{1,2,3,1};
+    int a = Solution.rob(nums);
+    System.out.println(a);
+  }
+  class Solution {
+    public static int rob(int[] nums) {
+        int N = nums.length;
+        int[] a = new int[100];
+        int[] b = new int[100];
+        if(N == 1){
+            return nums[0];
         }
-      for(int a=0;a<grid[0].length;a++){
-          for(int b=0;b<grid[0].length;b++){
-              int compera=0;
-              int add=0;
-              add=grid[a][b];
-              compera=Math.min(row[a],col[b]);
-              sum+=compera-add;
-              }
-          }
-
-return sum;
+        if(N == 3){
+            return Math.max(Math.max(nums[0],nums[2]),nums[1]);
+        }
+        a[0] = 0;
+        a[1] = nums[0];
+        b[0] = 0;
+        b[1] = nums[1];
+        for(int i=2;i<=N;i++){
+            b[i] = Math.max(b[i-1],b[i-2]+nums[i-1]);
+        }
+        for(int j=2;j<N;j++){
+            a[j] = Math.max(a[j-1],a[j-2]+nums[j-1]);
+        }
+        return Math.max(a[N-1], b[N]);
+    }
 }
 }

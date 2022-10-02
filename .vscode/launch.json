@@ -6,10 +6,33 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch TreeNode",
+            "request": "launch",
+            "mainClass": "TreeNode",
+            "projectName": "mao_9c290d98"
+        },
+        {
+            "type": "java",
+            "name": "Launch digui",
+            "request": "launch",
+            "mainClass": "digui",
+            "projectName": "mao_9c290d98"
+        },
+        {
+            "type": "java",
+            "name": "Launch listnote",
+            "request": "launch",
+            "mainClass": "listnote",
+            "projectName": "mao_9c290d98",
+            "console": "externalTerminal"
+        },
+        {
+            "type": "java",
             "name": "Launch mmao",
             "request": "launch",
             "mainClass": "mmao",
-            "projectName": "mao_9c290d98"
+            "projectName": "mao_9c290d98",
+            "console": "externalTerminal"
         },
         {
             "type": "java",
