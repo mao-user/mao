@@ -1,25 +1,18 @@
 public class listnote {
-public static void main(String[] args) {
-    ListNode head = new ListNode();
-    ListNode answer = new ListNode();
-    head.val=1;
-    head.next.val=2;
-    head.next.next.val=3;
-    head.next.next.next.val=4;
-    head.next.next.next.next.val=5;
-    System.out.println("hello world");
-    answer.next = removeElements(head,3);
-}
-static ListNode removeElements(ListNode head, int val) {
-    ListNode end = new ListNode(0);
-    end.next = head;
-    while(end.next!=null){
-        if(end.next.val==val){
-            end.next = end.next.next;
+    public static void main(String[] args) {
+        for (int a = 0; a <=9; a++) {
+            for (int b = 0; b <=9; b++) {
+                for(int c = 0; c<=9;c++){
+                    for(int d= 0 ; d<=9;d++){
+                    int sum1=4096*d+256*c+16*b+a;
+                    int sum2=1000*d+100*c+10*b+a;
+                    if(sum1 % sum2==0){
+                        System.out.println(sum2);
+                        }
+                    }
+                }
+            }
         }
-            end = end.next;
+     return;
     }
-    return head;
-}
-
 }
